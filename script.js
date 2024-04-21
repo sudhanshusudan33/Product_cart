@@ -23,10 +23,6 @@ function renderProducts(){
         listItem.style.backgroundColor = "rgba(178, 178, 187, 0.752)";
         productList.appendChild(listItem);
 
-        // Trigger fade-in animation
-        setTimeout(() => {
-            listItem.classList.add('animate');
-        }, 100);
     });
 }
 
@@ -36,7 +32,7 @@ function renderCart(){
 
     if(cart.length === 0){
         const noProductMessage = document.createElement('p');
-        noProductMessage.innerText = 'No Product added to the cart';
+        noProductMessage.innerText = 'No Product in the cart';
         cartList.appendChild(noProductMessage);
     }else{
         cart.forEach((cartItem) => {
@@ -49,11 +45,6 @@ function renderCart(){
             listItem.style.display = "flex";
             listItem.style.width = "20vw";
             cartList.appendChild(listItem);
-
-            // Trigger slide-in animation
-            setTimeout(() => {
-                listItem.classList.add('animate');
-            }, 100);
             
             totalPrice += cartItem.price * cartItem.quantity;
         });
